@@ -1,0 +1,29 @@
+﻿@model Eseries.Models.Domain.Genre
+@{
+}
+
+<form class="ww-40" asp-action="Add" method="post">
+    <h2 class="pb-10">Add Genre</h2>
+    <div class="row pd-2">
+        <div class="col">
+    <div class="input-cont">
+        <label asp-for="Genrename" class="iw-40">GenreName</label>
+        <input type="text" class="input" asp-for="Genrename">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="Genrename"> </span>
+    </div>
+    </div>
+    </div>
+    @if (TempData["msg"] != null)
+    {
+        <div class="alert mb-1">
+            @TempData["msg"]
+        </div>
+    }
+
+    <div class="input-container">
+        <button class="btn btn-default" type="submit">Save</button>
+        <a class="btn btn-sec" href="/Genre/GenreList">All records</a>
+    </div>
+</form>
