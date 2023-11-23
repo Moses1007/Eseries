@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Eseries.Models.Domain.Genre>
+@{
+}
+
+<div class="tbl-container">
+    <h2 style="text-align:center;margin-left: auto;margin-right: auto;border: 4px solid black;width:400px">Genres</h2>
+    <div class="genre-list" style="margin-left: auto;margin-right: auto;">
+        <table style="margin-left: auto;margin-right: auto;border: 3px solid black;width:400px;">
+            <tr>
+                <th style="text-align: center;border: 1px solid black;margin: 1.2rem 0;">Name</th>
+                <th style="text-align: center;border: 1px solid black;margin: 1.2rem 0;">Action</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="text-align: center;border: 1px solid black;">@item.Genrename</td>
+                    <td>
+                        <a href="/Genre/Edit?id=@item.Id" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                        <a onclick="return window.confirm('Are you sure?')" href="/Genre/Delete?id=@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+ 
+    <div class="input-container">
+        <a href="/Genre/Add" class="btn btn-sec" style="text-align:center;margin-left: auto;margin-right: auto;border: 4px solid black;width:400px">Back</a>
+    </div>
+</div>
