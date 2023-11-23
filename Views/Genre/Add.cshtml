@@ -8,11 +8,17 @@
         <div class="col">
     <div class="input-cont">
         <label asp-for="Genrename" class="iw-40">GenreName</label>
-        <input type="text" class="input" asp-for="Genrename">
+                <span asp-validation-for="Genrename"> </span>
     </div>
-    <div class="message-box pd-x-28 error">
+            <div class="col">
+                <div class="row pd-2">
+                    <input type="text" class="input" asp-for="Genrename">
+                </div>
+            </div>
+           
+@*     <div class="message-box pd-x-28 error">
         <span asp-validation-for="Genrename"> </span>
-    </div>
+    </div> *@
     </div>
     </div>
     @if (TempData["msg"] != null)
@@ -21,9 +27,19 @@
             @TempData["msg"]
         </div>
     }
-
+    <br />
+    <div class="col">
+        <div class="row pd-2">
     <div class="input-container">
         <button class="btn btn-default" type="submit">Save</button>
-        <a class="btn btn-sec" href="/Genre/GenreList">All records</a>
+       
+    </div>
+    </div>
+    </div>
+    <br />
+    <div >
+
+            <a style="text-align:center;" class="btn btn-sec" href="/Genre/GenreList">All records</a>
+
     </div>
 </form>
